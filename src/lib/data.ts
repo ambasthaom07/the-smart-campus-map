@@ -55,7 +55,7 @@ const base: Omit<ClassItem, "id" | "day">[][] = [
 ];
 
 export const timetable: ClassItem[] = base.flatMap((list, i) =>
-  list.map((c, j) => ({ ...c, id: `${i}-${j}`, day: days[i] })),
+  list.map((c, j) => ({ ...c, id: `${i}-${j}`, day: days[i] ?? "" })),
 );
 
 export type Notice = { id: string; title: string; body: string; category: "Academic" | "Events" | "General"; date: string };
